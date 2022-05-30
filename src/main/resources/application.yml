@@ -1,0 +1,20 @@
+mp:
+  messaging:
+    incoming:
+      some-channel:
+        connector: "smallrye-rabbitmq"
+        exchange:
+          name: "some-message-exchange"
+          type: fanout
+          declare: true
+        queue:
+          name: "some-queue"
+          declare: true
+
+rabbitmq-port: 5672 # Requires a dedicated running RabbitMQ instance because dev services currently doesn't expose the web UI port
+quarkus:
+  http:
+    port: 9090
+  reactive-messaging:
+    health:
+      enabled: true # Setting this to false obviously gets rid of the messaging health checks, but the behaviour remains

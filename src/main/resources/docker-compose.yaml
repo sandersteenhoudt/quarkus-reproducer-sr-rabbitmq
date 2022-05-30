@@ -1,0 +1,7 @@
+services:
+  rabbitmq:
+    container_name: reproducer-rabbitmq
+    image: "rabbitmq:3.10-management-alpine"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
